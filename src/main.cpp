@@ -49,7 +49,7 @@ See more at http://blog.squix.ch
 // Please read http://blog.squix.org/weatherstation-getting-code-adapting-it
 // for setup instructions
 
-#define HOSTNAME "ESP8266-OTA-"
+#define HOSTNAME "ESP8266-OTA-MRA"
 
 // Setup
 const int UPDATE_INTERVAL_SECS = 10 * 60; // Update every 10 minutes
@@ -64,14 +64,14 @@ const float UTC_OFFSET = 2;
 
 // Wunderground Settings
 const boolean IS_METRIC = true;
-const String WUNDERGRROUND_API_KEY = "31b5cd03db3a0e0d";
-const String WUNDERGRROUND_LANGUAGE = "EN";
-const String WUNDERGROUND_COUNTRY = "CH";
-const String WUNDERGROUND_CITY = "Zurich";
+const String WUNDERGRROUND_API_KEY = "a0f8d025c9e4a2ec";
+const String WUNDERGRROUND_LANGUAGE = "de";
+const String WUNDERGROUND_COUNTRY = "Germany";
+const String WUNDERGROUND_CITY = "Verden";
 
 //Thingspeak Settings
-const String THINGSPEAK_CHANNEL_ID = "67284";
-const String THINGSPEAK_API_READ_KEY = "L2VIW20QVNZJBLAK";
+const String THINGSPEAK_CHANNEL_ID = "142394";
+const String THINGSPEAK_API_READ_KEY = "65P2ID0QIKIF11OF";
 
 // Initialize the oled display for address 0x3c
 // sda-pin=14 and sdc-pin=12
@@ -114,8 +114,9 @@ int8_t getWifiQuality();
 // Add frames
 // this array keeps function pointers to all frames
 // frames are the single views that slide from right to left
-FrameCallback frames[] = { drawDateTime, drawCurrentWeather, drawForecast, drawThingspeak };
-int numberOfFrames = 4;
+//FrameCallback frames[] = { drawDateTime, drawCurrentWeather, drawForecast, drawThingspeak };
+FrameCallback frames[] = { drawDateTime, drawCurrentWeather, drawForecast};
+int numberOfFrames = 3;
 
 OverlayCallback overlays[] = { drawHeaderOverlay };
 int numberOfOverlays = 1;
